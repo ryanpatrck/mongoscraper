@@ -14,7 +14,6 @@ app.use(bodyParser.urlencoded({
 }));
 app.use(express.static('public')) // (create a public folder and land there)
     var databaseUri = 'mongodb://localhost/mongoscraper'
-    mongoose.connect('mongodb://localhost/mongoscraper')
     if(process.env.MONGODB_URI) {
         mongoose.connect(process.env.MONGODB_URI)
     } else {

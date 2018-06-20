@@ -100,6 +100,6 @@ app.use(express.static('public')) // (create a public folder and land there)
     
     var port = process.env.PORT || 3008;
 
-    app.listen(3008, function() {
+    app.listen(port, function() {
         console.log('App running on port 3008!');
       });

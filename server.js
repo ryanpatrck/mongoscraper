@@ -33,6 +33,7 @@ app.use(express.static('public')) // (create a public folder and land there)
     var Article = require('./models/Article.js')
     
     app.get('/', function(req, res) {
+        console.log("getting the index!");
         res.send(index.html); // sending the html file rather than rendering a handlebars file
       });
       app.get('/scrape', function(req, res) {

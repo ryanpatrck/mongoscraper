@@ -13,7 +13,7 @@ app.use(bodyParser.urlencoded({
     extended: false
 }));
 app.use(express.static('public')) // (create a public folder and land there)
-    var databaseUri = 'mongodb://heroku_fsk3nqdw:e569tiin1989fv53u573o27ibf@ds163630.mlab.com:63630/heroku_fsk3nqdw'
+    var databaseUri = 'mongodb://localhost/mongoscraper'
     if(process.env.MONGODB_URI) {
         console.log("env var:", process.env.MONGODB_URI);
         mongoose.connect(process.env.MONGODB_URI)
@@ -33,7 +33,6 @@ app.use(express.static('public')) // (create a public folder and land there)
     var Article = require('./models/Article.js')
     
     app.get('/', function(req, res) {
-        console.log("getting the index!");
         res.send(index.html); // sending the html file rather than rendering a handlebars file
       });
       app.get('/scrape', function(req, res) {

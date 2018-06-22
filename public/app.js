@@ -2,8 +2,11 @@
 $.getJSON("/articles", function(data) {
   // For each one
   for (var i = 0; i < data.length; i++) {
-    // Display the apropos information on the page
-    $("#articles").append("<p data-id='" + data[i]._id + "'>" + data[i].title + "<br />" + data[i].link + "</p>");
+    // Display the  information on the page
+    $("#articles").append("<p  data-id='" + data[i]._id + "'>" + data[i].title + "<br /> </p>");
+    var $link = $('<a>')
+    $link.html('<h3> Link </h3>').attr('href', 'http://screenrant.com/' + data[i].link)
+    $("#articles").append($link);
   }
 });
 
